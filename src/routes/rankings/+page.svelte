@@ -2,6 +2,7 @@
 	import { getContext } from 'svelte';
 	import { formatNumber, formatPower } from '$lib/utils';
 	import { goto } from '$app/navigation';
+	import { appTitle } from '$lib/config';
 	const t: (key: string, params?: Record<string, string | number>) => string = getContext('t');
 
 	interface Props {
@@ -86,7 +87,7 @@
 </script>
 
 <svelte:head>
-	<title>{t('rank.title')} - ROK Manager</title>
+	<title>{appTitle(t('rank.title'))}</title>
 </svelte:head>
 
 <div class="space-y-4">

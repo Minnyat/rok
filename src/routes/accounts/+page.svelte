@@ -3,6 +3,7 @@
 	import { formatPower } from '$lib/utils';
 	import Modal from '$lib/components/Modal.svelte';
 	import { getContext } from 'svelte';
+	import { appTitle } from '$lib/config';
 	const t: (key: string, params?: Record<string, string | number>) => string = getContext('t');
 
 	interface Props {
@@ -61,7 +62,7 @@
 </script>
 
 <svelte:head>
-	<title>{t('acc.title')} - ROK Manager</title>
+	<title>{appTitle(t('acc.title'))}</title>
 </svelte:head>
 
 <div class="space-y-6">

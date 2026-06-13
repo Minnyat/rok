@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import { getContext } from 'svelte';
+	import { appTitle } from '$lib/config';
 
 	interface Props {
 		form: { error?: string; username?: string } | null;
@@ -11,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>{t('login.title')} - ROK Manager</title>
+	<title>{appTitle(t('login.title'))}</title>
 </svelte:head>
 
 <div class="flex items-center justify-center min-h-[70vh]">
@@ -19,7 +20,7 @@
 		<div class="text-center mb-6">
 			<div class="text-4xl mb-2">⚔️</div>
 			<h1 class="text-xl font-bold text-rok-accent">{t('login.title')}</h1>
-			<p class="text-sm text-rok-muted mt-1">{t('login.subtitle')}</p>
+			<p class="text-sm text-rok-muted mt-1">{appTitle()}</p>
 		</div>
 
 		{#if form?.error}

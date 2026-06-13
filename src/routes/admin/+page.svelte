@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { formatDate, formatNumber, formatPower } from '$lib/utils';
 	import { getContext } from 'svelte';
+	import { appTitle } from '$lib/config';
 	const t: (key: string, params?: Record<string, string | number>) => string = getContext('t');
 
 	interface Props {
@@ -11,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>Admin - ROK Manager</title>
+	<title>{appTitle('Admin')}</title>
 </svelte:head>
 
 <div class="space-y-4">

@@ -18,9 +18,25 @@
 
 ## Screenshots
 
-Screenshots can be generated with `node scripts/screenshots.mjs` after setting `BASE_URL` and `ADMIN_PASS` environment variables, or manually take screenshots of each page and save to `docs/images/`.
+### Login
+![Login](docs/images/login.png)
 
-Expected files: `rankings.png`, `admin-panel.png`, `admin-users.png`, `admin-scores.png`, `accounts.png`, `login.png`
+### Rankings — Combined view with DKP breakdown
+![Rankings](docs/images/rankings.png)
+
+### Admin Panel — Overview with stats and farm account links
+![Admin Panel](docs/images/admin-panel.png)
+
+### User Management — Create users, set DKP bonus %, manage invites
+![Admin Users](docs/images/admin-users.png)
+
+### DKP Scoring — Configurable weights and recalculation
+![Scores](docs/images/admin-scores.png)
+
+### Farm Accounts — Players link farm accounts to main
+![Accounts](docs/images/accounts.png)
+
+> Regenerate screenshots: `BASE_URL=https://your-app.pages.dev ADMIN_PASS=xxx node scripts/screenshots.mjs`
 
 ---
 
@@ -322,10 +338,12 @@ No environment variables needed. All configuration is in `wrangler.toml` and the
 
 ### For Your Own Kingdom
 
-1. Change the kingdom name in `src/lib/components/Navbar.svelte`
+1. Edit `src/lib/config.ts` — set `kingdomName`, `kingdomNumber`, `subtitle`
 2. Update admin credentials in `migrations/0002_seed_admin.sql`
 3. Adjust default scoring weights in `migrations/0001_init.sql`
 4. Modify translations in `src/lib/i18n.ts`
+
+> Or just run `npm run setup` — it handles all of this interactively!
 
 ### Scoring Weights
 
@@ -372,7 +390,7 @@ STEP 7: Bind D1 in Cloudflare Dashboard, then $ npm run deploy again
 
 | What to change | File(s) |
 |----------------|---------|
-| Kingdom name / branding | `src/lib/components/Navbar.svelte` |
+| Kingdom name / branding | `src/lib/config.ts` (all branding in one file) |
 | Admin password | `migrations/0002_seed_admin.sql` (bcrypt hash) |
 | Translations (vi/en) | `src/lib/i18n.ts` |
 | Scoring formula | `src/lib/server/scores.ts` |

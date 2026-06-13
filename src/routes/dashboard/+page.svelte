@@ -2,6 +2,7 @@
 	import { getContext } from 'svelte';
 	import PlayerCard from '$lib/components/PlayerCard.svelte';
 	import { formatNumber } from '$lib/utils';
+	import { appTitle } from '$lib/config';
 	const t: (key: string, params?: Record<string, string | number>) => string = getContext('t');
 
 	interface Props {
@@ -17,7 +18,7 @@
 </script>
 
 <svelte:head>
-	<title>{t('dash.title')} - ROK Manager</title>
+	<title>{appTitle(t('dash.title'))}</title>
 </svelte:head>
 
 <div class="space-y-6">

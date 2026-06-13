@@ -55,26 +55,12 @@ async function main() {
   }
 
   // Step 1: Kingdom name
-  const kingdom = await ask('🏰 Your kingdom name/number (e.g. "3494" or "My Kingdom"): ');
+  const kingdom = await ask('🏰 Your kingdom number (e.g. "3494"): ');
   if (kingdom) {
-    // Update Navbar
-    const navbarPath = resolve(ROOT, 'src/lib/components/Navbar.svelte');
-    let navbar = readFileSync(navbarPath, 'utf-8');
-    navbar = navbar.replace('⚔️ ROK Manager', `⚔️ ROK ${kingdom}`);
-    writeFileSync(navbarPath, navbar);
-
-    // Update app.html
-    const appHtmlPath = resolve(ROOT, 'src/app.html');
-    let appHtml = readFileSync(appHtmlPath, 'utf-8');
-    appHtml = appHtml.replace('<title>ROK Manager</title>', `<title>ROK Manager - KD ${kingdom}</title>`);
-    writeFileSync(appHtmlPath, appHtml);
-
-    // Update login subtitle
-    const i18nPath = resolve(ROOT, 'src/lib/i18n.ts');
-    let i18n = readFileSync(i18nPath, 'utf-8');
-    i18n = i18n.replaceAll("'login.subtitle': 'ROK Manager',", `'login.subtitle': 'ROK Manager - KD ${kingdom}',`);
-    writeFileSync(i18nPath, i18n);
-
+    const configPath = resolve(ROOT, 'src/lib/config.ts');
+    let configFile = readFileSync(configPath, 'utf-8');
+    configFile = configFile.replace("kingdomNumber: '',", `kingdomNumber: '${kingdom}',`);
+    writeFileSync(configPath, configFile);
     console.log(`✅ Kingdom set to: ${kingdom}`);
   }
 

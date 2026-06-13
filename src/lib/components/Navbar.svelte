@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { t, type Lang } from '$lib/i18n';
+	import { navBrand } from '$lib/config';
 
 	interface Props {
 		user: App.Locals['user'];
@@ -13,7 +14,7 @@
 <nav class="sticky top-0 z-50 bg-rok-surface/95 backdrop-blur border-b border-rok-border">
 	<div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
 		<a href="/dashboard" class="flex items-center gap-2 font-bold text-rok-accent text-lg">
-			⚔️ ROK Manager
+			{navBrand()}
 		</a>
 
 		{#if user}

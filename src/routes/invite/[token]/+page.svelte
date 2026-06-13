@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import { getContext } from 'svelte';
+	import { appTitle } from '$lib/config';
 	const t: (key: string, params?: Record<string, string | number>) => string = getContext('t');
 
 	interface Props {
@@ -12,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<title>{t('inv.title')} - ROK Manager</title>
+	<title>{appTitle(t('inv.title'))}</title>
 </svelte:head>
 
 <div class="flex items-center justify-center min-h-[70vh]">

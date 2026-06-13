@@ -17,7 +17,6 @@ const translations: Record<string, Record<string, string>> = {
 
 		// Login
 		'login.title': 'Đăng nhập',
-		'login.subtitle': 'ROK Manager',
 		'login.username': 'Tên đăng nhập',
 		'login.password': 'Mật khẩu',
 		'login.submit': 'Đăng nhập',
@@ -164,7 +163,6 @@ const translations: Record<string, Record<string, string>> = {
 		'admin.accounts': 'Accounts',
 
 		'login.title': 'Login',
-		'login.subtitle': 'ROK Manager',
 		'login.username': 'Username',
 		'login.password': 'Password',
 		'login.submit': 'Login',
