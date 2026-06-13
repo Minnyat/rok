@@ -2,19 +2,7 @@
 
 > Kingdom management system for Rise of Kingdoms (ROK). Track DKP (Death-Kill Points), manage farm accounts, and maintain transparent rankings for KvK events.
 
-## Features
-
-| Feature | Description |
-|---------|-------------|
-| **DKP Rankings** | Automated scoring based on T4/T5 kills and deaths with configurable weights |
-| **Farm Account Linking** | Players link farm accounts; farm DKP contributes a configurable % to main |
-| **Combined & Individual** | View rankings with or without farm contributions |
-| **Bonus DKP %** | King/Admin can assign bonus % to rally/garrison captains |
-| **CSV Import** | Import player data from ROK kingdom stats CSV exports |
-| **User Management** | Invite-based registration with role system (Admin/King/Player) |
-| **Dispute System** | Players can report disputed account links for admin review |
-| **i18n** | Vietnamese and English UI toggle |
-| **Dark Theme** | Gaming-optimized dark UI |
+**[Tiếng Việt](#hướng-dẫn-tiếng-việt)** | **[English](#english-guide)**
 
 ## Screenshots
 
@@ -36,95 +24,224 @@
 ### Farm Accounts — Players link farm accounts to main
 ![Accounts](docs/images/accounts.png)
 
-> Regenerate screenshots: `BASE_URL=https://your-app.pages.dev ADMIN_PASS=xxx node scripts/screenshots.mjs`
-
 ---
 
-## Huong dan cho nguoi choi / Player Guide
+# Hướng dẫn tiếng Việt
 
-### Dang nhap / Login
+## Tính năng
 
-1. Nhan **link kich hoat** tu Admin/King
-2. Click link > tao **ten dang nhap** va **mat khau** > xong!
-3. Dang nhap tai trang chu voi tai khoan vua tao
+| Tính năng | Mô tả |
+|-----------|-------|
+| **Bảng xếp hạng DKP** | Tính điểm tự động dựa trên T4/T5 Kill và Dead với trọng số tùy chỉnh |
+| **Liên kết Farm Account** | Người chơi liên kết tài khoản phụ; DKP farm đóng góp % vào tài khoản chính |
+| **Tổng hợp & Cá nhân** | Xem xếp hạng có hoặc không có đóng góp farm |
+| **Bonus DKP %** | King/Admin cộng thêm % cho captain rally/garrison |
+| **Import CSV** | Nhập dữ liệu từ file CSV xuất từ ROK |
+| **Quản lý người dùng** | Đăng ký qua link mời, phân quyền Admin/King/Player |
+| **Báo cáo tranh chấp** | Người chơi báo cáo liên kết tài khoản sai |
+| **Đa ngôn ngữ** | Chuyển đổi tiếng Việt / tiếng Anh |
+| **Giao diện tối** | Thiết kế tối tối ưu cho game |
 
-### Xem xep hang / Rankings
+## Dành cho người chơi
 
-- Vao tab **Rankings** (Xep hang) tren thanh menu
-- **Combined (Tong hop)**: DKP ca nhan + farm account
-- **Individual (Ca nhan)**: Chi tinh DKP ca nhan
-- Click tieu de cot de sap xep (Power, T4 Kill, T5 Kill, DKP...)
-- Badge xanh `+X%` ben canh ten = nguoi choi duoc bonus DKP
+### Đăng nhập
 
-### Lien ket Farm Account
+1. Nhận **link kích hoạt** từ Admin/King
+2. Bấm vào link > tạo **tên đăng nhập** và **mật khẩu** > xong!
+3. Đăng nhập tại trang chủ với tài khoản vừa tạo
 
-1. Vao tab **Accounts** (Tai khoan)
-2. Nhap **Governor ID** hoac **ten** cua farm account
-3. Click **Add (Them)** > farm DKP se tu dong cong vao tai khoan chinh
-4. Muon go lien ket? Click **Remove (Xoa)** ben canh farm account
+### Xem xếp hạng
+
+- Vào tab **Xếp hạng** trên thanh menu
+- **Tổng hợp**: DKP cá nhân + farm account
+- **Cá nhân**: Chỉ tính DKP cá nhân
+- Bấm tiêu đề cột để sắp xếp (Power, T4 Kill, T5 Kill, DKP...)
+- Badge xanh `+X%` bên cạnh tên = người chơi được bonus DKP
+
+### Liên kết Farm Account
+
+1. Vào tab **Tài khoản**
+2. Nhập **Governor ID** hoặc **tên** của farm account
+3. Bấm **Thêm** > DKP farm sẽ tự động cộng vào tài khoản chính
+4. Muốn gỡ liên kết? Bấm **Xóa** bên cạnh farm account
 
 ### Dashboard
 
-- Xem thong tin ca nhan: Power, Kill, Dead, DKP
-- Tu dong cap nhat khi Admin import du lieu moi
+- Xem thông tin cá nhân: Power, Kill, Dead, DKP
+- Tự động cập nhật khi Admin import dữ liệu mới
 
-### Doi ngon ngu / Change Language
+### Đổi ngôn ngữ
 
-- Click nut **EN** hoac **VI** o goc phai tren thanh menu
+- Bấm nút **EN** hoặc **VI** ở góc phải trên thanh menu
+
+## Dành cho Admin
+
+### Import dữ liệu
+
+1. Xuất CSV từ ROK (qua tool bên thứ ba)
+2. Vào **Admin > Import** > nhập tên phiên bản (VD: "KvK S3 - Tuần 4")
+3. Chọn file CSV > bấm **Import**
+4. Vào **Admin > Versions** > bấm **Kích hoạt** phiên bản vừa import
+
+### Quản lý người dùng
+
+1. Vào **Admin > Users** > nhập tên hoặc Governor ID vào ô tìm kiếm
+2. Chọn governor từ dropdown > chọn role (Player/King) > bấm **Tạo & lấy link**
+3. Copy link kích hoạt gửi cho người chơi
+4. Đặt **Bonus %** cho captain rally/garrison: nhập số % > bấm **Lưu**
+
+### Cấu hình DKP
+
+1. Vào **Admin > Scores**
+2. Thay đổi trọng số: T4 Kill, T5 Kill, Dead T4, Dead T5
+3. Thay đổi **Farm Contribution %** (mặc định 40%)
+4. Bấm **Lưu** > hệ thống tự động tính lại
+
+### Xem tổng quan
+
+- **Admin > Tổng quan**: Số user hoạt động, chờ kích hoạt, báo cáo, liên kết farm
+- Danh sách farm account links nhóm theo user với thông tin Power + DKP
+
+## Cài đặt nhanh (3 bước)
+
+### Yêu cầu
+
+- [Node.js 18+](https://nodejs.org/) (tải về, cài đặt, xong)
+- [Tài khoản Cloudflare](https://dash.cloudflare.com/sign-up) (miễn phí, không cần thẻ)
+
+### Bước 1: Tải về & cài đặt
+
+```bash
+git clone https://github.com/Minnyat/rok-manager.git
+cd rok-manager
+npm install
+```
+
+### Bước 2: Chạy lệnh cài đặt
+
+```bash
+npm run setup
+```
+
+Script sẽ hướng dẫn bạn:
+- Đăng nhập Cloudflare (mở trình duyệt)
+- Nhập tên kingdom
+- Chọn mật khẩu admin
+- Tự động tạo database, chạy migrations, build & deploy
+
+### Bước 3: Kết nối Database (một lần duy nhất)
+
+Sau khi deploy, vào [Cloudflare Dashboard](https://dash.cloudflare.com):
+
+1. **Workers & Pages** > **rok-manager** > **Settings** > **Bindings**
+2. Bấm **Add binding** > **D1 Database**
+3. Tên biến: `DB`, chọn `rok-manager-db`
+4. **Lưu** > chạy `npm run deploy` một lần nữa
+
+Xong! Ứng dụng đã hoạt động.
+
+### Tự động deploy từ GitHub (tùy chọn)
+
+Push code lên `master` = tự động deploy. Để bật:
+
+1. Tạo Cloudflare API Token tại [dash.cloudflare.com/profile/api-tokens](https://dash.cloudflare.com/profile/api-tokens):
+   - Template: **Edit Cloudflare Workers**
+2. Thêm 3 secrets vào GitHub repo (**Settings > Secrets > Actions**):
+   - `CLOUDFLARE_API_TOKEN` — token vừa tạo
+   - `CLOUDFLARE_ACCOUNT_ID` — từ Cloudflare Dashboard
+   - `D1_DATABASE_ID` — từ `wrangler d1 list`
+3. Push code — GitHub Actions sẽ tự động build & deploy
 
 ---
 
-## Huong dan cho Admin / Admin Guide
+# English Guide
 
-### Import du lieu
+## Features
 
-1. Xuat CSV tu ROK (qua tool third-party)
-2. Vao **Admin > Import** > nhap ten phien ban (VD: "KvK S3 - Tuan 4")
-3. Chon file CSV > click **Import**
-4. Vao **Admin > Versions** > click **Kich hoat** phien ban vua import
+| Feature | Description |
+|---------|-------------|
+| **DKP Rankings** | Automated scoring based on T4/T5 kills and deaths with configurable weights |
+| **Farm Account Linking** | Players link farm accounts; farm DKP contributes a configurable % to main |
+| **Combined & Individual** | View rankings with or without farm contributions |
+| **Bonus DKP %** | King/Admin can assign bonus % to rally/garrison captains |
+| **CSV Import** | Import player data from ROK kingdom stats CSV exports |
+| **User Management** | Invite-based registration with role system (Admin/King/Player) |
+| **Dispute System** | Players can report disputed account links for admin review |
+| **i18n** | Vietnamese and English UI toggle |
+| **Dark Theme** | Gaming-optimized dark UI |
 
-### Quan ly Users
+## For Players
 
-1. Vao **Admin > Users** > nhap ten hoac Governor ID vao o tim kiem
-2. Chon governor tu dropdown > chon role (Player/King) > click **Create & get link**
-3. Copy link kich hoat gui cho nguoi choi
-4. Dat **Bonus %** cho captain rally/garrison: nhap so % > click **Save**
+### Login
 
-### Cau hinh DKP
+1. Receive an **activation link** from Admin/King
+2. Click the link > create a **username** and **password** > done!
+3. Login at the homepage with your new account
 
-1. Vao **Admin > Scores**
-2. Thay doi trong so: T4 Kill, T5 Kill, Dead T4, Dead T5
-3. Thay doi **Farm Contribution %** (mac dinh 40%)
-4. Click **Save** > he thong tu dong tinh lai
+### View Rankings
 
-### Xem tong quan
+- Go to the **Rankings** tab in the menu
+- **Combined**: Personal DKP + farm account contributions
+- **Individual**: Personal DKP only
+- Click column headers to sort (Power, T4 Kill, T5 Kill, DKP...)
+- Green badge `+X%` next to a name = player has bonus DKP
 
-- **Admin > Tong quan**: So user active, pending, bao cao, lien ket farm
-- Danh sach farm account links group theo user voi thong tin Power + DKP
+### Link Farm Accounts
 
----
+1. Go to the **Accounts** tab
+2. Enter the **Governor ID** or **name** of your farm account
+3. Click **Add** > farm DKP will automatically contribute to your main account
+4. Want to unlink? Click **Remove** next to the farm account
 
-## Tech Stack
+### Dashboard
 
-- **Frontend**: SvelteKit 5, Svelte 5 (runes), Tailwind CSS 3
-- **Backend**: SvelteKit server routes, Cloudflare Pages Functions
-- **Database**: Cloudflare D1 (SQLite on edge)
-- **Auth**: bcryptjs password hashing, cookie-based sessions
-- **Hosting**: Cloudflare Pages
-- **Adapter**: @sveltejs/adapter-cloudflare
+- View your personal stats: Power, Kill, Dead, DKP
+- Auto-updates when Admin imports new data
+
+### Change Language
+
+- Click the **EN** or **VI** button in the top-right corner of the menu
+
+## For Admins
+
+### Import Data
+
+1. Export CSV from ROK (via third-party tools)
+2. Go to **Admin > Import** > enter a version name (e.g., "KvK S3 - Week 4")
+3. Choose the CSV file > click **Import**
+4. Go to **Admin > Versions** > click **Activate** on the imported version
+
+### Manage Users
+
+1. Go to **Admin > Users** > type a name or Governor ID in the search box
+2. Select a governor from the dropdown > choose role (Player/King) > click **Create & get link**
+3. Copy the activation link and send it to the player
+4. Set **Bonus %** for rally/garrison captains: enter the % > click **Save**
+
+### Configure DKP
+
+1. Go to **Admin > Scores**
+2. Adjust weights: T4 Kill, T5 Kill, Dead T4, Dead T5
+3. Adjust **Farm Contribution %** (default 40%)
+4. Click **Save** > scores recalculate automatically
+
+### Overview
+
+- **Admin > Overview**: Active users, pending activations, reports, farm links
+- Farm account links grouped by user with Power + DKP info
 
 ## Quick Start (3 steps)
 
 ### Prerequisites
 
-- [Node.js 18+](https://nodejs.org/) (click download, install, done)
+- [Node.js 18+](https://nodejs.org/) (download, install, done)
 - [Cloudflare account](https://dash.cloudflare.com/sign-up) (free, no credit card needed)
 
 ### Step 1: Download & Install
 
 ```bash
 git clone https://github.com/Minnyat/rok-manager.git
-cd rok
+cd rok-manager
 npm install
 ```
 
@@ -151,12 +268,6 @@ After deploy, go to [Cloudflare Dashboard](https://dash.cloudflare.com):
 
 Done! Your app is live.
 
-### Subsequent Deploys
-
-```bash
-npm run deploy
-```
-
 ### Auto-Deploy from GitHub (optional)
 
 Push to `master` = auto deploy. To enable:
@@ -171,12 +282,8 @@ Push to `master` = auto deploy. To enable:
    - `D1_DATABASE_ID` — from `wrangler d1 list`
 3. Push code — GitHub Actions will build & deploy automatically
 
----
-
 <details>
 <summary><strong>Manual Setup (advanced)</strong></summary>
-
-If you prefer to set up step by step:
 
 #### Prerequisites
 
@@ -188,7 +295,7 @@ If you prefer to set up step by step:
 
 ```bash
 git clone https://github.com/Minnyat/rok-manager.git
-cd rok
+cd rok-manager
 npm install
 ```
 
@@ -229,7 +336,20 @@ In Cloudflare Dashboard: Workers & Pages > rok-manager > Settings > Bindings > A
 
 </details>
 
-## Project Structure
+---
+
+## Technical Reference
+
+### Tech Stack
+
+- **Frontend**: SvelteKit 5, Svelte 5 (runes), Tailwind CSS 3
+- **Backend**: SvelteKit server routes, Cloudflare Pages Functions
+- **Database**: Cloudflare D1 (SQLite on edge)
+- **Auth**: bcryptjs password hashing, cookie-based sessions
+- **Hosting**: Cloudflare Pages
+- **Adapter**: @sveltejs/adapter-cloudflare
+
+### Project Structure
 
 ```
 src/
@@ -237,6 +357,7 @@ src/
   app.d.ts                   # TypeScript app types
   hooks.server.ts            # Auth middleware + i18n
   lib/
+    config.ts                # Kingdom name, branding (edit this!)
     i18n.ts                  # Vietnamese/English translations
     utils.ts                 # formatNumber, formatPower, formatDate
     server/
@@ -273,11 +394,9 @@ migrations/
   0003_user_bonus.sql        # Bonus DKP column
 ```
 
-## How It Works
+### How It Works
 
-### DKP Scoring
-
-DKP is calculated with configurable weights:
+#### DKP Scoring
 
 ```
 DKP = T4_Kill x W1 + T5_Kill x W2 + Dead_T4 x W3 + Dead_T5 x W4
@@ -285,24 +404,20 @@ DKP = T4_Kill x W1 + T5_Kill x W2 + Dead_T4 x W3 + Dead_T5 x W4
 
 Default weights: T4=1, T5=3, Dead_T4=5, Dead_T5=10
 
-### Farm Account Contribution
-
-Players can link farm accounts. Farm DKP contributes a configurable percentage (default 40%) to the main account's combined score:
+#### Farm Account Contribution
 
 ```
 Combined DKP = Individual DKP + Sum(Farm_DKP x Farm_Contribution_%)
 ```
 
-### Bonus DKP
-
-King/Admin can assign a bonus % to specific players (e.g., rally/garrison captains). The bonus applies to the player's individual DKP before farm contributions:
+#### Bonus DKP
 
 ```
 Boosted DKP = DKP_Raw x (1 + Bonus_%)
 Combined = Boosted DKP + Farm Contributions
 ```
 
-### Auto-Recalculate
+#### Auto-Recalculate
 
 Scores recalculate automatically when:
 - A user links or unlinks a farm account
@@ -317,25 +432,7 @@ Scores recalculate automatically when:
 | **King** | Same as Admin (intended for kingdom leadership) |
 | **Player** | View rankings, dashboard, manage own sub accounts |
 
-### CSV Import
-
-Export kingdom data from ROK (via third-party tools) as CSV. The CSV should contain columns:
-
-```
-Ranking, Governor ID, Governor Name, Camp, KD, Power, Power Diff, KP,
-T4 Kill, T5 Kill, Dead, Acclaim, Healed, Dead T1-T5, DKP, Trades,
-Credit Score, Kill Points, Death Points, Heal Points, Feeding Rate
-```
-
-Admin imports the CSV via **Admin > Import**, assigns a version name (e.g., "KvK S3 - Week 4"), then activates the version via **Admin > Versions**.
-
-## Environment Variables
-
-No environment variables needed. All configuration is in `wrangler.toml` and the `scoring_config` database table.
-
-## Database Schema
-
-### Tables
+### Database Schema
 
 | Table | Purpose |
 |-------|---------|
@@ -348,20 +445,29 @@ No environment variables needed. All configuration is in `wrangler.toml` and the
 | `scoring_config` | DKP weight configuration |
 | `account_reports` | Disputed account reports |
 
-## Customization
-
-### For Your Own Kingdom
+### Customization
 
 1. Edit `src/lib/config.ts` — set `kingdomName`, `kingdomNumber`, `subtitle`
 2. Update admin credentials in `migrations/0002_seed_admin.sql`
 3. Adjust default scoring weights in `migrations/0001_init.sql`
 4. Modify translations in `src/lib/i18n.ts`
+5. Change scoring weights via **Admin > Scores** (no code changes needed)
 
 > Or just run `npm run setup` — it handles all of this interactively!
 
-### Scoring Weights
+### CSV Format
 
-Change via **Admin > Scores** in the web UI. No code changes needed.
+The CSV importer (via PapaParse) expects these column headers (case-insensitive, flexible matching):
+
+```
+Ranking, Governor ID, Governor Name, Camp, KD, Power, Power Diff,
+KP, T4 Kill, T5 Kill, Dead, Acclaim, Healed,
+Dead T1, Dead T2, Dead T3, Dead T4, Dead T5,
+DKP, Trades, Credit Score, Kill Points, Death Points,
+Heal Points, Feeding Rate
+```
+
+Numbers can use commas as thousand separators (e.g., "1,234,567").
 
 ---
 
@@ -371,25 +477,25 @@ This section is designed for AI assistants (Claude, GPT, etc.) to read and execu
 
 ### Context
 
-This is a SvelteKit 5 app using Svelte 5 runes (`$state()`, `$derived()`, `$props()`, `$effect()`, `getContext()`). It deploys to Cloudflare Pages with D1 (SQLite) as the database. The adapter is `@sveltejs/adapter-cloudflare`.
+SvelteKit 5 app using Svelte 5 runes (`$state()`, `$derived()`, `$props()`, `$effect()`, `getContext()`). Deploys to Cloudflare Pages with D1 (SQLite). Adapter: `@sveltejs/adapter-cloudflare`.
 
-### Quick Setup (recommended)
+### Quick Setup
 
 ```
 STEP 1: $ npm install
 STEP 2: $ npm run setup
-  (Interactive script: creates D1, sets password, migrates, builds, deploys)
+  (Interactive: creates D1, sets password, migrates, builds, deploys)
 STEP 3: Bind D1 in Cloudflare Dashboard (Workers & Pages > rok-manager > Settings > Bindings > Add D1 "DB")
 STEP 4: $ npm run deploy
 ```
 
-### Manual Setup (step by step)
+### Manual Setup
 
 ```
 STEP 1: $ npm install
 STEP 2: $ wrangler login
 STEP 3: $ wrangler d1 create rok-manager-db
-  NOTE: Copy the database_id from output, update wrangler.toml
+  NOTE: Copy database_id, update wrangler.toml
 STEP 4: Generate admin password hash:
   $ node -e "require('bcryptjs').hash('YourPassword',10).then(console.log)"
   Update migrations/0002_seed_admin.sql with the hash
@@ -400,11 +506,11 @@ STEP 6: $ npm run deploy
 STEP 7: Bind D1 in Cloudflare Dashboard, then $ npm run deploy again
 ```
 
-### Key Files for Modifications
+### Key Files
 
 | What to change | File(s) |
 |----------------|---------|
-| Kingdom name / branding | `src/lib/config.ts` (all branding in one file) |
+| Kingdom name / branding | `src/lib/config.ts` |
 | Admin password | `migrations/0002_seed_admin.sql` (bcrypt hash) |
 | Translations (vi/en) | `src/lib/i18n.ts` |
 | Scoring formula | `src/lib/server/scores.ts` |
@@ -414,23 +520,22 @@ STEP 7: Bind D1 in Cloudflare Dashboard, then $ npm run deploy again
 | CSS theme / colors | `src/app.css` (Tailwind + CSS variables) |
 | Tailwind config | `tailwind.config.js` |
 
-### Important Patterns
+### Code Patterns
 
 ```typescript
 // Svelte 5 runes (NOT Svelte 4 stores)
-let value = $state(initial);        // reactive state
-let derived = $derived(expr);       // computed value
-let { prop }: Props = $props();     // component props
+let value = $state(initial);
+let derived = $derived(expr);
+let { prop }: Props = $props();
 $effect(() => { /* side effect */ });
 
-// i18n pattern in components
+// i18n in components
 import { getContext } from 'svelte';
 const t: (key: string, params?: Record<string, string | number>) => string = getContext('t');
-// Usage: {t('key')} or {t('key', { param: value })}
 
 // Database access in server routes
 import { getDb } from '$lib/server/db';
-const db = getDb(platform);  // platform from SvelteKit load/action
+const db = getDb(platform);
 const result = await db.prepare('SELECT ...').bind(...).first();
 
 // D1 batch operations (max ~40 per batch)
@@ -447,17 +552,3 @@ await db.batch(stmts);
 | Wrangler serves old code locally | Kill all node processes, rebuild, restart |
 | `adapter-cloudflare` build error | Ensure `pages_build_output_dir` in wrangler.toml matches adapter output |
 | TypeScript errors in `.svelte` | Svelte 5 runes require `lang="ts"` in script tag |
-
-### CSV Format Reference
-
-The CSV importer (via PapaParse) expects these column headers (case-insensitive, flexible matching):
-
-```
-Ranking, Governor ID, Governor Name, Camp, KD, Power, Power Diff,
-KP, T4 Kill, T5 Kill, Dead, Acclaim, Healed,
-Dead T1, Dead T2, Dead T3, Dead T4, Dead T5,
-DKP, Trades, Credit Score, Kill Points, Death Points,
-Heal Points, Feeding Rate
-```
-
-Numbers can use commas as thousand separators (e.g., "1,234,567").
