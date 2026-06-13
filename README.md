@@ -2,7 +2,9 @@
 
 > Kingdom management system for Rise of Kingdoms (ROK). Track DKP (Death-Kill Points), manage farm accounts, and maintain transparent rankings for KvK events.
 
-**[Tiếng Việt](#hướng-dẫn-tiếng-việt)** | **[English](#english-guide)**
+**[Tiếng Việt](#hướng-dẫn-tiếng-việt)** | **[English](#english-guide)** | **[Donate](#donate--ủng-hộ)**
+
+**Miễn phí sử dụng** | **Free to use** | License: [MIT Non-Commercial](LICENSE)
 
 ## Screenshots
 
@@ -468,6 +470,51 @@ Heal Points, Feeding Rate
 ```
 
 Numbers can use commas as thousand separators (e.g., "1,234,567").
+
+---
+
+## Donate / Ủng hộ
+
+Dự án được phát triển và duy trì miễn phí. Nếu bạn thấy hữu ích, bạn có thể ủng hộ tác giả qua QR bên dưới:
+
+This project is developed and maintained for free. If you find it useful, you can support the author via QR below:
+
+<p align="center">
+  <img src="docs/images/donate-qr.png" alt="Donate QR" width="250" />
+</p>
+
+> Thêm ảnh QR vào `docs/images/donate-qr.png`
+
+---
+
+## Liên hệ / Contact
+
+| | |
+|---|---|
+| **Discord** | `minnyat` |
+| **Facebook** | [fb.com/MinNyat.me](https://www.facebook.com/MinNyat.me) |
+
+- Hỗ trợ setup miễn phí / Free setup support
+- Báo lỗi hoặc góp ý? Tạo [Issue](https://github.com/Minnyat/rok-manager/issues)
+
+---
+
+## Đóng góp / Contributing
+
+Mọi đóng góp đều được chào đón! / All contributions are welcome!
+
+1. Fork repo
+2. Tạo branch mới: `git checkout -b feature/ten-tinh-nang`
+3. Commit thay đổi
+4. Tạo Pull Request
+
+---
+
+## Giấy phép / License
+
+[MIT Non-Commercial](LICENSE) - Miễn phí sử dụng, chỉnh sửa, phân phối. **Không được phép thương mại hóa** dựa trên dự án này.
+
+Free to use, modify, and distribute. **Commercial use is not permitted.**
 
 ---
 
