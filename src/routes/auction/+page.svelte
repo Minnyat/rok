@@ -49,11 +49,11 @@
 		try {
 			const res = await fetch('/api/auction/live');
 			if (!res.ok) return;
-			const payload = await res.json();
+			const payload = await res.json() as { ok: boolean; view?: any; serverNow?: number };
 			if (!payload.ok) return;
 			const prevStatus = liveView?.auction?.status;
 			liveView = payload.view;
-			lastUpdated = payload.serverNow;
+			lastUpdated = payload.serverNow ?? null;
 			// Auction just transitioned out of open — reload to get reveal data
 			if (prevStatus === 'open' && payload.view?.auction?.status !== 'open') {
 				await invalidateAll();
